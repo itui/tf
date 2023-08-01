@@ -13,14 +13,16 @@ provider "anypoint" {
     username = "CraftSoftwareB30"              # optionally use ANYPOINT_USERNAME env var
     password = "Nebihaamir@123" 
 }
-# data "anypoint_connected_app" "test_connected_app" {
-#       id = "6145bbd35e1948f2877536b037469008" # existing Connected App client id
-
-#     # client_secret = "ba3BA95152894695a9e0D8c169B81070"
-# }
 
 resource "anypoint_env" "env" {
   org_id = var.root_org_id   # environment related business group
   name = "test"                  # environment name
   type = "sandbox"              # environment type : sandbox/production
+}
+
+resource "anypoint_team" "team" {
+  org_id = var.root_org_id
+  # parent_team_id = "bcb23e48-16ac-4092-b9a9-3c1c9e95a1c8"
+  parent_team_id = var.parent_team_id
+  team_name = "my_new_team_tf"
 }
