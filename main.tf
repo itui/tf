@@ -14,17 +14,8 @@ provider "anypoint" {
 }
 
 resource "anypoint_env" "env" {
-  # org_id = var.root_org_id   # environment related business group
-  org_id = "cba5ec70-2e53-4af3-b5c7-2eb142dc6a19"
-  name = "test"                  # environment name
+  org_id = "cba5ec70-2e53-4af3-b5c7-2eb142dc6a19"    # environment related business group
+  name = "DEV"                  # environment name
   type = "sandbox"              # environment type : sandbox/production
 }
-
-resource "anypoint_team" "team" {
-  org_id = var.root_org_id
-  parent_team_id = "bcb23e48-16ac-4092-b9a9-3c1c9e95a1c8"
-  # parent_team_id = var.parent_team_id
-  team_name = "my_new_team_tf"
-}
-
 

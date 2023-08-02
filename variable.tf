@@ -5,7 +5,11 @@ variable "root_org_id" {
     sensitive = true
   
 }
-variable "parent_team_id" {
+variable "anypoint_team" {
     type = string
-    sensitive = true
+    
+}
+variable "anypoint_user" {
+    type =  string
+  
 }
