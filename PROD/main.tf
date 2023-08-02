@@ -1,5 +1,15 @@
 terraform {
+    cloud {
+    organization = "nebihaamirfeb23"
+    workspaces {
+      name = "tf"
+    }
+  }
   required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "3.3.2"
+    }
     anypoint = {
       source = "mulesoft-anypoint/anypoint"
       version = "1.5.1"
